@@ -1,0 +1,35 @@
+CREATE TABLE auth_user (
+	id int PRIMARY KEY,
+    first_name varchar(100),
+    last_name varchar(100),
+    email varchar(100),
+    username varchar(100),
+    password varchar(100),
+    registration_key varchar(100),
+    reset_password_key varchar(100),
+    registration_id varchar(100)
+);
+
+CREATE TABLE turnos (
+    id_turno int PRIMARY KEY,
+    id_authuser int,
+    fecha_hora date,
+    id_profesional int,
+    pago int
+);
+
+CREATE TABLE profesionales (
+    id_profesional int PRIMARY KEY,
+    nombre varchar(100),
+    apellido varchar(100),
+    DNI bigint,
+    id_especialidad int,
+    usuario varchar(100),
+    password varchar(100),
+    email varchar(100)
+);
+
+CREATE TABLE especialidad (
+    id_especialidad int PRIMARY KEY,
+    nombre_especialidad varchar(100)
+);
